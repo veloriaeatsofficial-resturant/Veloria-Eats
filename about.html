@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Veloria Eats</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(0,0,0,0.8);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+nav h1 {
+  color: #fff;
+  margin: 0;
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+nav ul li a.home { background: #ff6f61; }
+nav ul li a.about { background: #6a11cb; }
+nav ul li a.menu { background: #2575fc; }
+nav ul li a.jobs { background: #11998e; }
+nav ul li a.tracking { background: #ee0979; }
+nav ul li a.contact { background: #ff6a00; }
+
+nav ul li a:hover {
+  opacity: 0.8;
+}
+
+nav input {
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+  margin-left: auto;
+  min-width: 120px;
+}
+
+.header {
+  height: 60vh;
+  background: url('https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+  margin-top: 70px;
+}
+
+.header h2 {
+  font-size: 42px;
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.section h3 {
+  color: #6a11cb;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.section p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.branches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.branch {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.branch h4 {
+  color: #ff6f61;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media(max-width:768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  nav input {
+    margin: 10px 0 0 0;
+    width: 100%;
+  }
+  .header h2 {
+    font-size: 28px;
+  }
+  .section h3 {
+    font-size: 28px;
+  }
+}
+
+  </style>
+</head>
+<body><nav>
+  <h1>Veloria Eats</h1>
+  <ul>
+    <li><a href="index.html" class="home">Home</a></li>
+    <li><a href="about.html" class="about">About</a></li>
+    <li><a href="menu.html" class="menu">Menu</a></li>
+    <li><a href="jobs.html" class="jobs">Jobs</a></li>
+    <li><a href="tracking.html" class="tracking">Tracking</a></li>
+    <li><a href="contact.html" class="contact">Contact</a></li>
+  </ul>
+  <input type="text" id="search" placeholder="Search page..." onkeypress="searchPage(event)">
+</nav><div class="header">
+  <h2>About Veloria Eats</h2>
+</div><div class="section">
+  <h3>Our Story</h3>
+  <p>Veloria Eats has been serving delicious food with passion for over 15 years. Our journey started with a dream to provide a memorable dining experience in a welcoming atmosphere.</p>
+</div><div class="section">
+  <h3>Atmosphere & Interior Design</h3>
+  <p>Each branch of Veloria Eats is designed to offer a modern, cozy, and luxurious environment. From lighting to furniture, every detail enhances the dining experience.</p>
+</div><div class="section">
+  <h3>Service & Team</h3>
+  <p>Our dedicated team ensures that every guest receives impeccable service, blending professionalism with warmth and hospitality.</p>
+</div><div class="section">
+  <h3>Hospitality Experience</h3>
+  <p>With over a decade of experience, Veloria Eats focuses on making every meal special through attentive care and a friendly atmosphere.</p>
+</div><div class="section">
+  <h3>Our Branches</h3>
+  <div class="branches">
+    <div class="branch">
+      <h4>Montreal</h4>
+      <p>Street: 2587 Duke Street</p>
+      <p>City: Montreal, Canada</p>
+    </div>
+    <div class="branch">
+      <h4>Charny</h4>
+      <p>Street: 4591 St-Jacques Est</p>
+      <p>City: Charny, Canada</p>
+    </div>
+    <div class="branch">
+      <h4>St Eugene De Guigues</h4>
+      <p>Street: 389 rue des Églises Est</p>
+      <p>City: St Eugene De Guigues, Canada</p>
+    </div>
+    <div class="branch">
+      <h4>Pikangikum</h4>
+      <p>Street: 734 Nelson Street</p>
+      <p>City: Pikangikum, Canada</p>
+    </div>
+    <div class="branch">
+      <h4>Toronto</h4>
+      <p>Street: 729 Runnymede Rd</p>
+      <p>City: Toronto, Canada</p>
+    </div>
+  </div>
+</div><script>
+  function searchPage(event) {
+    if (event.key === 'Enter') {
+      let value = document.getElementById('search').value.toLowerCase();
+      const pages = {
+        'home': 'index.html',
+        'about': 'about.html',
+        'menu': 'menu.html',
+        'jobs': 'jobs.html',
+        'tracking': 'tracking.html',
+        'contact': 'contact.html'
+      };
+      if (pages[value]) {
+        window.location.href = pages[value];
+      } else {
+        alert('Page not found');
+      }
+    }
+  }
+</script></body>
+</html>
