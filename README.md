@@ -1,2 +1,0 @@
-# Veloria-Eats
-Veloria Eats
