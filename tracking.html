@@ -1,0 +1,38 @@
+<script>
+async function checkStatus() {
+  let email = document.getElementById('email').value;
+  let dob = document.getElementById('dob').value;
+
+  if (!email || !dob) {
+    alert("Please enter email and date of birth");
+    return;
+  }
+
+  // ✅ AAPKA REAL GOOGLE SCRIPT URL
+  let url = "https://script.google.com/macros/s/AKfycbzDUKlDR5cB8OKE7i7sHkXxyWhzPsVOVZVU-Kc65RgAgrGnS5Lq7wO93wBLK0VElpWE/exec";
+
+  try {
+    let response = await fetch(url + "?email=" + encodeURIComponent(email) + "&dob=" + encodeURIComponent(dob));
+    let data = await response.json();
+
+    let box = document.getElementById('resultBox');
+    box.style.display = 'block';
+
+    if (data.success) {
+      box.innerHTML = `
+        <strong>Name:</strong> ${data.name}<br>
+        <strong>Email:</strong> ${data.email}<br>
+        <strong>Date of Birth:</strong> ${data.dob}<br>
+        <strong>Status:</strong> ${data.status}<br>
+        <strong>Message:</strong> ${data.message}
+      `;
+    } else {
+      box.innerHTML = "❌ Application not found";
+    }
+
+  } catch (error) {
+    alert("⚠️ Error connecting to server");
+    console.log(error);
+  }
+}
+</script>
