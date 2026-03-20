@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracking - Veloria Eats</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background: rgba(0,0,0,0.8);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      flex-wrap: wrap;
+    }
+
+    nav h1 { color: white; }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .home { background: #ff6f61; }
+    .about { background: #6a11cb; }
+    .menu { background: #2575fc; }
+    .jobs { background: #11998e; }
+    .tracking { background: #ee0979; }
+    .contact { background: #ff6a00; }
+
+    .container {
+      max-width: 600px;
+      margin: 120px auto;
+      background: rgba(255,255,255,0.95);
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #ee0979;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f4f4f4;
+      border-radius: 10px;
+      display: none;
+      text-align: left;
+    }
+
+    @media(max-width:768px) {
+      nav { flex-direction: column; align-items: flex-start; }
+      nav ul { flex-direction: column; width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <h1>Veloria Eats</h1>
+  <ul>
+    <li><a href="index.html" class="home">Home</a></li>
+    <li><a href="about.html" class="about">About</a></li>
+    <li><a href="menu.html" class="menu">Menu</a></li>
+    <li><a href="jobs.html" class="jobs">Jobs</a></li>
+    <li><a href="tracking.html" class="tracking">Tracking</a></li>
+    <li><a href="contact.html" class="contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <h2>Application Tracking</h2>
+  <p>Enter your email and date of birth</p>
+
+  <input type="email" id="email" placeholder="Enter Email">
+  <input type="date" id="dob">
+
+  <button onclick="checkStatus()">Check Status</button>
+
+  <div class="result" id="resultBox"></div>
+</div>
+
+<script>
+async function checkStatus() {
+  let email = document.getElementById('email').value;
+  let dob = document.getElementById('dob').value;
+
+  if (!email || !dob) {
+    alert("Please enter email and date of birth");
+    return;
+  }
+
+  let url = "https://script.google.com/macros/s/AKfycbzDUKlDR5cB8OKE7i7sHkXxyWhzPsVOVZVU-Kc65RgAgrGnS5Lq7wO93wBLK0VElpWE/exec";
+
+  try {
+    let response = await fetch(url + "?email=" + encodeURIComponent(email) + "&dob=" + encodeURIComponent(dob));
+    let data = await response.json();
+
+    let box = document.getElementById('resultBox');
+    box.style.display = 'block';
+
+    if (data.success) {
+      box.innerHTML = `
+        <strong>Name:</strong> ${data.name}<br>
+        <strong>Email:</strong> ${data.email}<br>
+        <strong>Date of Birth:</strong> ${data.dob}<br>
+        <strong>Status:</strong> ${data.status}<br>
+        <strong>Message:</strong> ${data.message}
+      `;
+    } else {
+      box.innerHTML = "❌ Application not found";
+    }
+
+  } catch (error) {
+    alert("Error connecting to server");
+    console.log(error);
+  }
+}
+</script>
+
+</body>
+</html>
