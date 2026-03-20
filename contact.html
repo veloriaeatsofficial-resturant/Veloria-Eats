@@ -1,0 +1,243 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Veloria Eats</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(0,0,0,0.8);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+nav h1 {
+  color: #fff;
+  margin: 0;
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+nav ul li a.home { background: #ff6f61; }
+nav ul li a.about { background: #6a11cb; }
+nav ul li a.menu { background: #2575fc; }
+nav ul li a.jobs { background: #11998e; }
+nav ul li a.tracking { background: #ee0979; }
+nav ul li a.contact { background: #ff6a00; }
+
+nav ul li a:hover {
+  opacity: 0.8;
+}
+
+nav input {
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+  margin-left: auto;
+  min-width: 120px;
+}
+
+.header {
+  height: 30vh;
+  background: url('https://images.unsplash.com/photo-1589820296150-4b347b7e07c9?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+  margin-top: 70px;
+}
+
+.header h2 {
+  font-size: 36px;
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.section h3 {
+  color: #6a11cb;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+form input, form select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+form button {
+  grid-column: span 2;
+  padding: 12px;
+  background: #6a11cb;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  opacity: 0.8;
+}
+
+@media(max-width:768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  nav input {
+    margin: 10px 0 0 0;
+    width: 100%;
+  }
+  form {
+    grid-template-columns: 1fr;
+  }
+  .header h2 {
+    font-size: 28px;
+  }
+}
+
+  </style>
+</head>
+<body><nav>
+  <h1>Veloria Eats</h1>
+  <ul>
+    <li><a href="index.html" class="home">Home</a></li>
+    <li><a href="about.html" class="about">About</a></li>
+    <li><a href="menu.html" class="menu">Menu</a></li>
+    <li><a href="jobs.html" class="jobs">Jobs</a></li>
+    <li><a href="tracking.html" class="tracking">Tracking</a></li>
+    <li><a href="contact.html" class="contact">Contact</a></li>
+  </ul>
+  <input type="text" id="search" placeholder="Search page..." onkeypress="searchPage(event)">
+</nav><div class="header">
+  <h2>Contact Veloria Eats</h2>
+</div><div class="section contact-info">
+  <h3>Head Office</h3>
+  <p><strong>Street:</strong> 729 Runnymede Rd</p>
+  <p><strong>City:</strong> Toronto</p>
+  <p><strong>State/Province:</strong> Ontario</p>
+  <p><strong>Zip code:</strong> M6S 2Z7</p>
+  <p><strong>Email:</strong> veloriaeatsofficial@gmail.com</p>
+</div><div class="section">
+  <h3>Book a Table</h3>
+  <form action="https://formspree.io/f/xwvrpbza" method="POST">
+    <input type="text" name="first_name" placeholder="First Name" required>
+    <input type="text" name="last_name" placeholder="Last Name" required>
+    <select name="branch" required>
+      <option value="Montreal">Montreal</option>
+      <option value="Charny">Charny</option>
+      <option value="St Eugene De Guigues">St Eugene De Guigues</option>
+      <option value="Pikangikum">Pikangikum</option>
+      <option value="Toronto">Toronto</option>
+    </select>
+    <select name="floor" required>
+      <option value="1">Floor 1</option>
+      <option value="2">Floor 2</option>
+      <option value="3">Floor 3</option>
+    </select>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="tel" name="phone" placeholder="Phone +CountryCode" required>
+    <select name="table_number" required>
+      <option value="1">Table 1</option>
+      <option value="2">Table 2</option>
+      <option value="3">Table 3</option>
+      <option value="4">Table 4</option>
+      <option value="5">Table 5</option>
+      <option value="6">Table 6</option>
+      <option value="7">Table 7</option>
+      <option value="8">Table 8</option>
+      <option value="9">Table 9</option>
+      <option value="10">Table 10</option>
+      <option value="11">Table 11</option>
+      <option value="12">Table 12</option>
+      <option value="13">Table 13</option>
+      <option value="14">Table 14</option>
+      <option value="15">Table 15</option>
+      <option value="16">Table 16</option>
+      <option value="17">Table 17</option>
+      <option value="18">Table 18</option>
+      <option value="19">Table 19</option>
+      <option value="20">Table 20</option>
+    </select>
+    <button type="submit">Book Table</button>
+  </form>
+</div><script>
+  function searchPage(event) {
+    if (event.key === 'Enter') {
+      let value = document.getElementById('search').value.toLowerCase();
+      const pages = {
+        'home': 'index.html',
+        'about': 'about.html',
+        'menu': 'menu.html',
+        'jobs': 'jobs.html',
+        'tracking': 'tracking.html',
+        'contact': 'contact.html'
+      };
+      if (pages[value]) {
+        window.location.href = pages[value];
+      } else {
+        alert('Page not found');
+      }
+    }
+  }
+</script></body>
+</html>
