@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veloria Eats - Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(0,0,0,0.8);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+nav h1 {
+  color: #fff;
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav input {
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+}
+
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 50px;
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+  </style>
+</head>
+<body><nav>
+  <h1>Veloria Eats</h1>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="jobs.html">Jobs</a></li>
+    <li><a href="tracking.html">Tracking</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <input type="text" id="search" placeholder="Search page..." onkeypress="searchPage(event)">
+</nav><div class="hero">
+  <h2>Welcome to Veloria Eats 🍽️<br>Experience Premium Taste</h2>
+</div><script>
+  function searchPage(event) {
+    if (event.key === 'Enter') {
+      let value = document.getElementById('search').value.toLowerCase();
+      const pages = {
+        'home': 'index.html',
+        'about': 'about.html',
+        'menu': 'menu.html',
+        'jobs': 'jobs.html',
+        'tracking': 'tracking.html',
+        'contact': 'contact.html'
+      };
+
+      if (pages[value]) {
+        window.location.href = pages[value];
+      } else {
+        alert('Page not found');
+      }
+    }
+  }
+</script></body>
+</html>
