@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Veloria Eats</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fdf6e3;
+      color: #333;
+    }nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(0,0,0,0.8);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+nav h1 {
+  color: #fff;
+  margin: 0;
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+nav ul li a.home { background: #ff6f61; }
+nav ul li a.about { background: #6a11cb; }
+nav ul li a.menu { background: #2575fc; }
+nav ul li a.jobs { background: #11998e; }
+nav ul li a.tracking { background: #ee0979; }
+nav ul li a.contact { background: #ff6a00; }
+
+nav ul li a:hover {
+  opacity: 0.8;
+}
+
+nav input {
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+  margin-left: auto;
+  min-width: 120px;
+}
+
+.header {
+  height: 40vh;
+  background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+  margin-top: 70px;
+}
+
+.header h2 {
+  font-size: 42px;
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.menu-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.dish {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.dish:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.dish h4 {
+  margin: 10px 0;
+  font-size: 20px;
+  color: #ff6f61;
+}
+
+.dish p {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #2575fc;
+}
+
+.dish .price {
+  font-weight: bold;
+  font-size: 18px;
+  color: #11998e;
+}
+
+/* Responsive */
+@media(max-width:768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  nav input {
+    margin: 10px 0 0 0;
+    width: 100%;
+  }
+  .header h2 {
+    font-size: 28px;
+  }
+}
+
+  </style>
+</head>
+<body><nav>
+  <h1>Veloria Eats</h1>
+  <ul>
+    <li><a href="index.html" class="home">Home</a></li>
+    <li><a href="about.html" class="about">About</a></li>
+    <li><a href="menu.html" class="menu">Menu</a></li>
+    <li><a href="jobs.html" class="jobs">Jobs</a></li>
+    <li><a href="tracking.html" class="tracking">Tracking</a></li>
+    <li><a href="contact.html" class="contact">Contact</a></li>
+  </ul>
+  <input type="text" id="search" placeholder="Search page..." onkeypress="searchPage(event)">
+</nav><div class="header">
+  <h2>Veloria Eats Menu 🍽️</h2>
+</div><div class="menu-section">
+  <div class="dish"><h4>Poutine</h4><p>Fries, cheese curds, aur gravy</p><div class="price">$18</div></div>
+  <div class="dish"><h4>Bannock</h4><p>Fry bread</p><div class="price">$15</div></div>
+  <div class="dish"><h4>Montreal-style Smoked Meat</h4><div class="price">$25</div></div>
+  <div class="dish"><h4>Butter Tarts</h4><div class="price">$12</div></div>
+  <div class="dish"><h4>Nanaimo Bars</h4><p>Chocolate dessert</p><div class="price">$14</div></div>
+  <div class="dish"><h4>Canadian (Peameal) Bacon</h4><div class="price">$22</div></div>
+  <div class="dish"><h4>Montreal Bagels</h4><div class="price">$16</div></div>
+  <div class="dish"><h4>Tourtière</h4><p>Meat pie</p><div class="price">$24</div></div>
+  <div class="dish"><h4>Beaver Tails</h4><p>Fried dough</p><div class="price">$15</div></div>
+  <div class="dish"><h4>Nova Scotian Lobster Rolls</h4><div class="price">$35</div></div>
+  <div class="dish"><h4>Split Pea Soup</h4><div class="price">$13</div></div>
+  <div class="dish"><h4>Ketchup Chips</h4><div class="price">$8</div></div>
+  <div class="dish"><h4>Caesar Cocktail</h4><div class="price">$18</div></div>
+  <div class="dish"><h4>Maple Syrup Dishes</h4><div class="price">$20</div></div>
+  <div class="dish"><h4>Saskatoon Berry Pie</h4><div class="price">$14</div></div>
+  <div class="dish"><h4>Donairs</h4><p>Halifax-style</p><div class="price">$22</div></div>
+  <div class="dish"><h4>Pouding chômeur</h4><p>Dessert</p><div class="price">$15</div></div>
+  <div class="dish"><h4>Jiggs Dinner</h4><p>Newfoundland style</p><div class="price">$28</div></div>
+  <div class="dish"><h4>Toutons</h4><div class="price">$16</div></div>
+  <div class="dish"><h4>Hawaiian Pizza</h4><div class="price">$24</div></div>
+  <div class="dish"><h4>Canadian Lobster Bisque</h4><div class="price">$30</div></div>
+  <div class="dish"><h4>Maple Glazed Salmon</h4><div class="price">$32</div></div>
+  <div class="dish"><h4>Bacon & Cheddar Pierogies</h4><div class="price">$22</div></div>
+  <div class="dish"><h4>Wild Rice Salad</h4><div class="price">$18</div></div>
+  <div class="dish"><h4>Grilled Arctic Char</h4><div class="price">$33</div></div>
+  <div class="dish"><h4>Beef Short Ribs</h4><div class="price">$36</div></div>
+  <div class="dish"><h4>Maple Pecan Pie</h4><div class="price">$14</div></div>
+  <div class="dish"><h4>Moose Burger</h4><div class="price">$29</div></div>
+  <div class="dish"><h4>Smoked Trout Salad</h4><div class="price">$27</div></div>
+  <div class="dish"><h4>Canadian Cheese Platter</h4><div class="price">$26</div></div>
+  <div class="dish"><h4>Atlantic Cod Fish & Chips</h4><div class="price">$28</div></div>
+  <div class="dish"><h4>Maple Latte</h4><div class="price">$12</div></div>
+  <div class="dish"><h4>Wild Mushroom Risotto</h4><div class="price">$25</div></div>
+  <div class="dish"><h4>Grilled Venison Steak</h4><div class="price">$38</div></div>
+  <div class="dish"><h4>Canadian Crab Cakes</h4><div class="price">$34</div></div>
+  <div class="dish"><h4>Maple Ice Cream</h4><div class="price">$12</div></div>
+  <div class="dish"><h4>Seared Scallops</h4><div class="price">$35</div></div>
+  <div class="dish"><h4>Alberta Beef Carpaccio</h4><div class="price">$32</div></div>
+  <div class="dish"><h4>Maple BBQ Chicken</h4><div class="price">$30</div></div>
+  <div class="dish"><h4>Peameal Bacon Sandwich</h4><div class="price">$22</div></div>
+  <div class="dish"><h4>Canadian Charcuterie Board</h4><div class="price">$36</div></div>
+  <div class="dish"><h4>Salmon Tartare</h4><div class="price">$34</div></div>
+  <div class="dish"><h4>Blueberry Cobbler</h4><div class="price">$14</div></div>
+</div><script>
+  function searchPage(event) {
+    if (event.key === 'Enter') {
+      let value = document.getElementById('search').value.toLowerCase();
+      const pages = {
+        'home': 'index.html',
+        'about': 'about.html',
+        'menu': 'menu.html',
+        'jobs': 'jobs.html',
+        'tracking': 'tracking.html',
+        'contact': 'contact.html'
+      };
+      if (pages[value]) {
+        window.location.href = pages[value];
+      } else {
+        alert('Page not found');
+      }
+    }
+  }
+</script></body>
+</html>
